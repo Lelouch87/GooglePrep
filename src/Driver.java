@@ -6,64 +6,25 @@ public class Driver {
         int[] intArray = generateIntArray(10);
 
         //BUBBLE SORT
-        bubbleSort(intArray);
+        BubbleSort bs = new BubbleSort();
+        bs.sort(intArray);
         //SELECTION SORT
         intArray = generateIntArray(10);
-        selectionSort(intArray);
+        SelectionSort ss = new SelectionSort();
+        ss.sort(intArray);
         //INSERTION SORT
 
-    }
-
-    private static void bubbleSort(int[] array) {
-        System.out.println("----BUBBLE SORT----");
-        System.out.println("Time Complexity: O(n)^2");
+        //QUICK SORT
+        intArray = generateIntArray(15);
+        System.out.println("----QUICK SORT----");
+        System.out.println("Time Complexity: O(nLogN)");
         System.out.println("Original Array");
-        printArray(array);
-        for (int i = 0; i < array.length - 1; i++) {
-            for (int j = 0; j < array.length - i - 1;j ++) {
-                if (array[j] > array[j+1]) {
-                    int temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
-                }
-            }
-        }
+        printArray(intArray);
+        MergeSort ms = new MergeSort();
+        ms.sort(intArray, 0 , intArray.length-1);
         System.out.println("Sorted Array");
-        printArray(array);
-    }
+        printArray(intArray);
 
-    private static void selectionSort(int[] array) {
-        System.out.println("----INSERTION SORT----");
-        System.out.println("Time Complexity: O(n)^2");
-        System.out.println("Original Array");
-        printArray(array);
-        for (int i = 0; i < array.length - 1; i++) {
-            int minIndex = i;
-            for (int j = i; j < array.length - 1; j++) {
-                if (array[j+1] < array[minIndex]) {
-                    minIndex = j+1;
-
-                }
-            }
-            int temp = array[i];
-            array[i] = array[minIndex];
-            array[minIndex] = temp;
-        }
-        System.out.println("Sorted Array");
-        printArray(array);
-    }
-
-    private static void insertionSort(int[] array) {
-        System.out.println("----SELECTION SORT----");
-        System.out.println("Time Complexity: ");
-        System.out.println("Original Array");
-        printArray(array);
-
-
-
-
-        System.out.println("Sorted Array");
-        printArray(array);
     }
 
     private static void printArray(int[] array) {
