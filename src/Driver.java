@@ -24,6 +24,10 @@ public class Driver {
         intArray = generateIntArray(20);
         QuickSort qs = new QuickSort();
         qs.sort(intArray);
+        //HEAP SORT
+        intArray = generateIntArray(10);
+        HeapSort hs = new HeapSort();
+        hs.sort(intArray);
 
     }
 
