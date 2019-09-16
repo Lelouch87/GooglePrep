@@ -13,17 +13,17 @@ public class Driver {
         SelectionSort ss = new SelectionSort();
         ss.sort(intArray);
         //INSERTION SORT
-
-        //QUICK SORT
+        intArray = generateIntArray(10);
+        InsertionSort is = new InsertionSort();
+        is.sort(intArray);
+        //MERGE SORT
         intArray = generateIntArray(15);
-        System.out.println("----QUICK SORT----");
-        System.out.println("Time Complexity: O(nLogN)");
-        System.out.println("Original Array");
-        printArray(intArray);
         MergeSort ms = new MergeSort();
-        ms.sort(intArray, 0 , intArray.length-1);
-        System.out.println("Sorted Array");
-        printArray(intArray);
+        ms.sort(intArray);
+        //QUICK SORT
+        intArray = generateIntArray(20);
+        QuickSort qs = new QuickSort();
+        qs.sort(intArray);
 
     }
 
